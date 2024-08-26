@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Turboaz</title>
+</head>
+<body class="bg-slate-100">
+    <header >
+        <div class="flex justify-evenly p-2 md:hidden font-sans text-lg	 font-bold	bg-white">
+                <a class="text-red-600">TURBO.AZ</a>
+                <a class="text-gray-500	">BINA.AZ</a>
+                <a class="text-gray-500	">TAP.AZ</a>
+                <a class=""><i class="fa-solid fa-plus bg-red-600 text-white p-2 rounded-full"></i></a>
+        </div>
+        <div class="flex-col items-center divide-y divide-gray w-11/12 my-2 mx-2 rounded dark:bg-white md:hidden ">
+            <div class="flex justify-between">
+                <div class="flex items-center"> 
+                    <button type="button" class="px-8 py-3">
+                    <i class="fa-solid fa-car text-red-600"></i>
+                    </button>
+                    <p >
+                    Bütün Məhsullar
+                    </p>
+                </div>
+                <button type="button" title="Toggle dropdown" class="p-3">
+                    <i class="fa-solid fa-chevron-down text-gray-500"></i>
+                </button>
+            </div>
+            <div class="flex items-center "  >
+               <button type="button" class="px-8 py-3">
+                   <i class="fa-solid fa-arrow-down-wide-short text-red-600"></i>
+                </button>
+                <p >
+                    Filtrler
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center divide-y divide-gray w-11/12 my-2 mx-2 rounded dark:bg-white md:hidden">
+            <div class="px-8 py-3">
+                <a href="">Moto</a>
+            </div>
+            <button type="button" title="Toggle dropdown" class="p-3">
+                <i class="fa-solid fa-chevron-right text-gray-500"></i>
+            </button>
+        </div>
+        <div class="flex justify-between items-center divide-y divide-gray w-11/12 my-2 mx-2 rounded dark:bg-white md:hidden">
+            <div class="px-8 py-3">
+                <a href="">Avtokataloq</a>
+            </div>
+            <button type="button" title="Toggle dropdown" class="p-3">
+                <i class="fa-solid fa-chevron-right text-gray-500"></i>            
+            </button>
+        </div>
+        <div class="text-gray-400 flex justify-between w-3/5 mx-auto hidden md:flex py-2">
+            <div>
+                <a href="#" class="px-1">Tap.az</a>
+                <a href="#" class="px-1">Bina.az</a>
+                <a href="#" class="px-1">Boss.az</a>
+            </div>
+            <div>
+                <a href="#" class="px-1 text-black">Dəstək: (012) 505-77-55</a>
+                <a href="#" class="px-1">Yardim</a>
+                <a href="#" class="px-1">RU</a>
+                <a href="#" class="px-1"><i class="fa-solid fa-heart px-1"></i>Seçilmişlər</a>
+                <a href="#" class="px-1"><i class="fa-solid fa-user px-1"></i>Giriş</a>
+            </div>
+        </div>
+        <div class="bg-red-600 py-2 flex   hidden text-center md:flex" >
+            <div class="flex mx-auto text-white w-3/5 items-center">
+                <div><a href="#" class="font-semibold text-lg px-2">TURBO.AZ</a></div>
+                <a href="#" class="px-3">Bütün elanlar</a>
+                <a href="#" class="px-3">Salonlar</a>
+                <a href="#" class="px-3">Avtokatoloq</a>
+                <a href="#" class="px-3">Moto</a>
+                <a href="#" class="px-3">Ehtiyat hissələri və aksesuarlar</a>
+                <a href="#" class="px-3">İcarə</a>
+                <button class="flex  items-center bg-[#85c01f] p-2 rounded-md ">
+                    <i class="fa-solid fa-plus p-1 mr-3 border rounded-full text-[12px]"></i>
+                    <p class="pb-1">Yeni Elan</p>
+                </button>
+            </div>
+        </div>
+        <div class="md:w-3/5 px-9 mx-auto  hidden md:flex flex-col relative">
+            <div class="flex">
+                <div class="flex justify-between bg-white rounded my-3 border-2">
+                    <input type="text" placeholder="Marka" class="px-1 rounded w-32">
+                    <button type="button" title="Toggle dropdown" class="p-3">
+                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
+                    </button>
+                </div>
+                <div class="flex justify-between bg-slate-50 rounded m-3 border-2">
+                    <input type="text" placeholder="Model" class="px-1 rounded bg-slate-50 w-32">
+                    <button type="button" title="Toggle dropdown" class="p-3">
+                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
+                    </button>
+                </div>
+                <div class="flex my-3 text-gray-500">
+                    <button class="bg-white p-3 rounded-s-xl border">Hamısı</button>
+                    <button class="bg-white p-3 border">Yeni</button>
+                    <button class=" bg-white p-3 rounded-e-xl border">Sürülmüş</button>
+                </div>
+                <div class="flex justify-between bg-white rounded m-3 border-2">
+                    <input type="text" placeholder="Şəhər" class="px-1 rounded bg-white">
+                    <button type="button" title="Toggle dropdown" class="p-3">
+                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="flex">
+                    <input type="text" placeholder="Qiymət, min." class="border border-gray-300 rounded-l-md py-2 px-2 text-gray-500 placeholder-gray-500  w-28">
+                    <input type="text" placeholder="maks." class="border border-gray-300 rounded-r-md py-2 px-2 text-gray-500 placeholder-gray-500 w-24">
+                </div>
+                <div class="flex mx-1 p-2 bg-white border rounded">
+                    <select>
+                        <option value="azn">AZN</option>
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </div>
+                <div class="flex">
+                    <button class="mx-1 p-2 bg-white border rounded">Kredit</button>
+                    <button class="mx-1 p-2 bg-white border rounded">Barter</button>
+                </div>
+                <div class="flex justify-between bg-white rounded  border-2">
+                    <input type="text" placeholder="Ban növü" class="px-1 rounded w-28">
+                    <button type="button" title="Toggle dropdown" class="p-3">
+                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
+                    </button>
+                </div>
+                <div> 
+                    <div class="flex mx-2">
+                        <div class="flex justify-between bg-white rounded  border-2">
+                            <input type="text" placeholder="İl.min" class="px-1 rounded w-20">
+                            <button type="button" title="Toggle dropdown" class="p-3">
+                                <i class="fa-solid fa-chevron-down text-gray-500"></i>
+                            </button>
+                            <input type="text" placeholder="İl.max" class="px-1 rounded w-20">
+                            <button type="button" title="Toggle dropdown" class="p-3">
+                                <i class="fa-solid fa-chevron-down text-gray-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-end items-center my-4 mx-3 text-gray-400 ">
+                <p class="px-2">Sıfırla</p>
+                <p class="px-2">Daha çox filtr <i class="fa-solid fa-chevron-down"></i></p>
+                <button type="button" class="px-6 py-3 text-sm font-semibold rounded bg-red-600 text-white w-38">Elanlari Göstər</button>
+            </div>   
+        </div>
+    </header>
+    <main class="md:w-3/5 mx-auto">
+        <div class="px-8 py-3">
+            <p >Bu gün: <a href="#" class="text-blue-500">1000 yeni elan</a></p>
+        </div>
+        <div>
+            <h1 class="text-gray-400 px-8 py-3 font-sans  uppercase font-bold">Premium Elanlar</h1>
+        </div>
+        <div id="content" class="flex flex-wrap justify-center ">
+           
+        </div>
+    </main>
+    <footer class="md:w-3/5 mx-auto px-2">
+        <div class="hidden mx-4 my-6 md:flex">
+            <ul class="text-gray-500 text-[15px] mx-5">
+                <li class="py-1">Audi(1)</li>
+                <li class="py-1">Avia(1)</li>
+                <li class="py-1">Baic(1)</li>
+                <li class="py-1">Baiji(1)</li>
+                <li class="py-1">Bentley(1)</li>
+                <li class="py-1">BMC(1)</li>
+                <li class="py-1">C.Moto(1)</li>
+                <li class="py-1">Cadillac(1)</li>
+                <li class="py-1">CFMOTO(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chery(1)</li>
+                <li class="py-1">Chevrolet(1)</li>
+                <li class="py-1">Cevo(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chagdan(1)</li>
+                <li class="py-1">CFMoto(1)</li>
+                <li class="py-1">GAC(1)</li>
+                <li class="py-1">GAZ(1)</li>
+            </ul>
+            <ul class="text-gray-500 text-[15px] mx-5">
+                <li class="py-1">Audi(1)</li>
+                <li class="py-1">Avia(1)</li>
+                <li class="py-1">Baic(1)</li>
+                <li class="py-1">Baiji(1)</li>
+                <li class="py-1">Bentley(1)</li>
+                <li class="py-1">BMC(1)</li>
+                <li class="py-1">C.Moto(1)</li>
+                <li class="py-1">Cadillac(1)</li>
+                <li class="py-1">CFMOTO(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chery(1)</li>
+                <li class="py-1">Chevrolet(1)</li>
+                <li class="py-1">Cevo(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chagdan(1)</li>
+                <li class="py-1">CFMoto(1)</li>
+                <li class="py-1">GAC(1)</li>
+                <li class="py-1">GAZ(1)</li>
+            </ul>
+            <ul class="text-gray-500 text-[15px] mx-5">
+                <li class="py-1">Audi(1)</li>
+                <li class="py-1">Avia(1)</li>
+                <li class="py-1">Baic(1)</li>
+                <li class="py-1">Baiji(1)</li>
+                <li class="py-1">Bentley(1)</li>
+                <li class="py-1">BMC(1)</li>
+                <li class="py-1">C.Moto(1)</li>
+                <li class="py-1">Cadillac(1)</li>
+                <li class="py-1">CFMOTO(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chery(1)</li>
+                <li class="py-1">Chevrolet(1)</li>
+                <li class="py-1">Cevo(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chagdan(1)</li>
+                <li class="py-1">CFMoto(1)</li>
+                <li class="py-1">GAC(1)</li>
+                <li class="py-1">GAZ(1)</li>
+            </ul>
+            <ul class="text-gray-500 text-[15px] mx-5">
+                <li class="py-1">Audi(1)</li>
+                <li class="py-1">Avia(1)</li>
+                <li class="py-1">Baic(1)</li>
+                <li class="py-1">Baiji(1)</li>
+                <li class="py-1">Bentley(1)</li>
+                <li class="py-1">BMC(1)</li>
+                <li class="py-1">C.Moto(1)</li>
+                <li class="py-1">Cadillac(1)</li>
+                <li class="py-1">CFMOTO(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chery(1)</li>
+                <li class="py-1">Chevrolet(1)</li>
+                <li class="py-1">Cevo(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chagdan(1)</li>
+                <li class="py-1">CFMoto(1)</li>
+                <li class="py-1">GAC(1)</li>
+                <li class="py-1">GAZ(1)</li>
+            </ul>
+            <ul class="text-gray-500 text-[15px] mx-5">
+                <li class="py-1">Audi(1)</li>
+                <li class="py-1">Avia(1)</li>
+                <li class="py-1">Baic(1)</li>
+                <li class="py-1">Baiji(1)</li>
+                <li class="py-1">Bentley(1)</li>
+                <li class="py-1">BMC(1)</li>
+                <li class="py-1">C.Moto(1)</li>
+                <li class="py-1">Cadillac(1)</li>
+                <li class="py-1">CFMOTO(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chery(1)</li>
+                <li class="py-1">Chevrolet(1)</li>
+                <li class="py-1">Cevo(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chagdan(1)</li>
+                <li class="py-1">CFMoto(1)</li>
+                <li class="py-1">GAC(1)</li>
+                <li class="py-1">GAZ(1)</li>
+            </ul>
+            <ul class="text-gray-500 text-[15px] mx-5">
+                <li class="py-1">Audi(1)</li>
+                <li class="py-1">Avia(1)</li>
+                <li class="py-1">Baic(1)</li>
+                <li class="py-1">Baiji(1)</li>
+                <li class="py-1">Bentley(1)</li>
+                <li class="py-1">BMC(1)</li>
+                <li class="py-1">C.Moto(1)</li>
+                <li class="py-1">Cadillac(1)</li>
+                <li class="py-1">CFMOTO(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chery(1)</li>
+                <li class="py-1">Chevrolet(1)</li>
+                <li class="py-1">Cevo(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chagdan(1)</li>
+                <li class="py-1">CFMoto(1)</li>
+                <li class="py-1">GAC(1)</li>
+                <li class="py-1">GAZ(1)</li>
+            </ul>
+            <ul class="text-gray-500 text-[15px] mx-5">
+                <li class="py-1">Audi(1)</li>
+                <li class="py-1">Avia(1)</li>
+                <li class="py-1">Baic(1)</li>
+                <li class="py-1">Baiji(1)</li>
+                <li class="py-1">Bentley(1)</li>
+                <li class="py-1">BMC(1)</li>
+                <li class="py-1">C.Moto(1)</li>
+                <li class="py-1">Cadillac(1)</li>
+                <li class="py-1">CFMOTO(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chery(1)</li>
+                <li class="py-1">Chevrolet(1)</li>
+                <li class="py-1">Cevo(1)</li>
+                <li class="py-1">Chana(1)</li>
+                <li class="py-1">Chagdan(1)</li>
+                <li class="py-1">CFMoto(1)</li>
+                <li class="py-1">GAC(1)</li>
+                <li class="py-1">GAZ(1)</li>
+            </ul>
+        </div>
+        <div class="mb-2 md:flex mx-6">
+            <h5><a href="#" class="p-2 cursor-pointer">Qaydalar</a></h5>
+            <h5><a href="#" class="p-2 cursor-pointer">İstifadəçi razılaşması</a></h5>
+            <h5><a href="#" class="p-2 cursor-pointer">Reklam yerləşdirin</a></h5>
+            <h5><a href="#" class="p-2 cursor-pointer">Sifariş avtomobil alan alıcı üçün tövsiyələr</a></h5>
+        </div>
+        <div class="md:hidden mx-6">
+            <h5 class="px-2 ">Dəstək xidməti</h5>
+            <h5 class="px-2 mb-2 font-bold	">(012) 111- 22 - 33</h5>
+            <div>
+                <a href="#" class="cursor-pointer"><i class="fa-solid fa-envelope text-gray-500 bg-slate-300 p-2 m-1 rounded-full"></i></a>
+                <a href="#" class="cursor-pointer" ><i class="fa-brands fa-facebook-f text-gray-500 bg-slate-300 m-1 p-2 rounded-full"></i></a>
+                <a href="#" class="cursor-pointer" ><i class="fa-brands fa-instagram text-gray-500 bg-slate-300 m-1 p-2 rounded-full"></i></a>
+            </div>
+            <div class="mb-12"> <p class="text-gray-500 p-2">&copy 2006 - 2024 Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+        </div>
+    </footer>
+    <div class=" fixed bottom-0 left-0 bg-slate-100 flex justify-between p-2 text-gray-400 text-[12px]	 fixed bottom-0 left-0 w-full bg-white md:hidden">
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-house"></i>
+                <a href="#">ƏSAS</a>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-heart"></i>
+                <a href="#">SEÇİLMİŞLƏR</a>
+            </div>
+            <div class=" flex flex-col items-center relative">
+                <i class="fa-solid fa-plus bg-red-600 rounded-full text-white -translate-y-8 p-3 absolute text-[18px]"></i>
+                <a href="#" class="pt-3">YENİ ELAN</a>
+            </div>
+            <section class=" flex flex-col items-center">
+                <i class="fa-solid fa-user"></i>
+                <a href="#">KABİNET</a>
+            </section>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-bars"></i>
+                <a href="#">DAHA ÇOX</a>
+            </div>
+    </div>
+    <div class="bg-red-600 hidden md:flex py-3">
+        <div class="md:w-3/5 mx-auto flex justify-between">
+           <div class="text-white">
+                <p class="text-xs	">Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş elanların məzmununa görə məsuliyyət daşımır.</p>
+            </div>
+           <div class="text-white">
+                <p class="text-xs	">2006-2024 Digital Classifieds MMC. VÖEN: 1405631661
+                 Mobil versiyası
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
