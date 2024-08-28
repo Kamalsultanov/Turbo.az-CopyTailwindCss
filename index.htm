@@ -6,6 +6,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Turboaz</title>
+    <style>
+        .remove-arrow::-webkit-inner-spin-button,
+        .remove-arrow::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+    </style>
 </head>
 <body class="bg-slate-100">
     <header >
@@ -33,7 +40,7 @@
                <button type="button" class="px-8 py-3">
                    <i class="fa-solid fa-arrow-down-wide-short text-red-600"></i>
                 </button>
-                <p >
+                <p>
                     Filtrler
                 </p>
             </div>
@@ -86,37 +93,33 @@
         <div class="md:w-3/5 px-9 mx-auto  hidden md:flex flex-col relative">
             <div class="flex">
                 <div class="flex justify-between bg-white rounded my-3 border-2">
-                    <input type="text" placeholder="Marka" class="px-1 rounded w-32">
-                    <button type="button" title="Toggle dropdown" class="p-3">
-                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
-                    </button>
+                    <select  id="markaSec"   class="w-48 text-gray-400 rounded">
+                    </select>
                 </div>
                 <div class="flex justify-between bg-slate-50 rounded m-3 border-2">
-                    <input type="text" placeholder="Model" class="px-1 rounded bg-slate-50 w-32">
-                    <button type="button" title="Toggle dropdown" class="p-3">
-                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
-                    </button>
+                    <select  id="modelSec"   class="w-48 text-gray-400 rounded">
+                        <option></option>
+                    </select>
                 </div>
                 <div class="flex my-3 text-gray-500">
-                    <button class="bg-white p-3 rounded-s-xl border">Hamısı</button>
-                    <button class="bg-white p-3 border">Yeni</button>
-                    <button class=" bg-white p-3 rounded-e-xl border">Sürülmüş</button>
+                    <button id="Everything" class="bg-white p-3 rounded-s-xl border focus:bg-red-600 focus:text-white">Hamısı</button>
+                    <button id="Newones" class="bg-white p-3 border focus:bg-red-600 focus:text-white">Yeni</button>
+                    <button id="Oldones" class=" bg-white p-3 rounded-e-xl border focus:bg-red-600 focus:text-white">Sürülmüş</button>
                 </div>
                 <div class="flex justify-between bg-white rounded m-3 border-2">
-                    <input type="text" placeholder="Şəhər" class="px-1 rounded bg-white">
-                    <button type="button" title="Toggle dropdown" class="p-3">
-                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
-                    </button>
+                    <select  id="citySec"   class="w-48 text-gray-400 rounded">
+                    </select>
                 </div>
             </div>
             <div class="flex">
                 <div class="flex">
-                    <input type="text" placeholder="Qiymət, min." class="border border-gray-300 rounded-l-md py-2 px-2 text-gray-500 placeholder-gray-500  w-28">
-                    <input type="text" placeholder="maks." class="border border-gray-300 rounded-r-md py-2 px-2 text-gray-500 placeholder-gray-500 w-24">
+                    <input type="number" id="minPrice" placeholder="Qiymət, min." class="remove-arrow border border-gray-300 rounded-l-md py-2 px-2 text-gray-500 placeholder-gray-500  w-28">
+                    <input type="number" id="maxPrice" placeholder="maks." class="remove-arrow border border-gray-300 rounded-r-md py-2 px-2 text-gray-500 placeholder-gray-500 w-24">
                 </div>
-                <div class="flex mx-1 p-2 bg-white border rounded">
-                    <select>
-                        <option value="azn">AZN</option>
+                <div class="">
+                    <select id="currency" class="flex mx-1 py-4 px-2 bg-white rounded border-2">
+                        <option value="">Valyuta</option>
+                        <option value="AZN">AZN</option>
                         <option value="EUR">EUR</option>
                         <option value="USD">USD</option>
                     </select>
@@ -126,10 +129,8 @@
                     <button class="mx-1 p-2 bg-white border rounded">Barter</button>
                 </div>
                 <div class="flex justify-between bg-white rounded  border-2">
-                    <input type="text" placeholder="Ban növü" class="px-1 rounded w-28">
-                    <button type="button" title="Toggle dropdown" class="p-3">
-                        <i class="fa-solid fa-chevron-down text-gray-500"></i>
-                    </button>
+                    <select  id="banSec"  class="w-36 text-gray-400 rounded">
+                    </select>
                 </div>
                 <div> 
                     <div class="flex mx-2">
@@ -147,9 +148,9 @@
                 </div>
             </div>
             <div class="flex justify-end items-center my-4 mx-3 text-gray-400 ">
-                <p class="px-2">Sıfırla</p>
+                <a class="px-2 cursor-pointer active:text-red-600"  onclick="cleanfilter()">Sıfırla</a>
                 <p class="px-2">Daha çox filtr <i class="fa-solid fa-chevron-down"></i></p>
-                <button type="button" class="px-6 py-3 text-sm font-semibold rounded bg-red-600 text-white w-38">Elanlari Göstər</button>
+                <button type="button" onclick="showad()" class="px-6 py-3 text-sm font-semibold rounded bg-red-600 text-white w-38">Elanlari Göstər</button>
             </div>   
         </div>
     </header>

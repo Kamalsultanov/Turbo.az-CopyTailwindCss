@@ -796,6 +796,8 @@ const data = [
 ]
 
 const content = document.getElementById("content")
+
+
 let kod = '';
 for (let i = 0; i < data.length; i++) {
     let b = data[i];
@@ -812,10 +814,110 @@ for (let i = 0; i < data.length; i++) {
             <div class="py-2 px-3">
                 <span class="block tracking-widest uppercase text-base font-bold">${b.price}${b.currency}</span>
                 <h2 class="font-medium tracking-wide">${b.brand}${b.model}</h2>
-                <p>${b.year}, ${b.engine},${b.odmeter}${b.odometerUnit}</p>
+                <p>${b.year}, ${b.engine},${b.odometer}${b.odometerUnit}</p>
                 <p class="text-gray-600 text-sm">${b.city}</p>
             </div>
         </div>
     `;
 }
 content.innerHTML += kod;
+
+const markaSection = document.getElementById("markaSec")
+const modelSection = document.getElementById("modelSec")
+const citySection = document.getElementById("citySec")
+const banSection = document.getElementById("banSec")
+
+
+const markaSet = new Set()
+const modelSet = new Set()
+const citySet = new Set()
+const banSet = new Set()
+
+for (let i = 0; i < data.length; i++){
+  markaSet.add(data[i].brand)
+  modelSet.add(data[i].model)
+  citySet.add(data[i].city)
+  banSet.add(data[i].banType)
+}
+
+const markaArr = Array.from(markaSet);
+const modelArr = Array.from(modelSet);
+const cityArr = Array.from(citySet);
+const banArr = Array.from(banSet);
+
+
+function addMarka() {
+  markaSection.innerHTML = "<option >MarkaSeç</option>"
+  modelSection.innerHTML = "<option >ModelSeç</option>"
+  citySection.innerHTML = "<option>ŞəhərSeç</option>"
+  banSection.innerHTML = "<option>BanNövü</option>"
+  for (let j = 0; j < markaArr.length; j++){
+
+  markaSection.innerHTML += `<option >${markaArr[j]}</option>`
+  modelSection.innerHTML+= `<option>${modelArr[j]}</option>`
+  citySection.innerHTML+= `<option>${cityArr[j]}</option>`
+  }
+  for (let b = 0; b < banArr.length; b++){
+    banSection.innerHTML+= `<option>${banArr[b]}</option>`
+  }
+}
+addMarka()
+
+
+const currency = document.getElementById("currency")
+
+
+function showad() {
+  let markafilter = markaSection.value;
+  let modelfilter = modelSection.value;
+  let cityfilter = citySection.value;
+  let currencyfilter = currency.value
+  content.innerHTML = ""
+
+  for (let i = 0; i < data.length; i++) {
+    let brandMatch = markafilter === "MarkaSeç" || data[i].brand.includes(markafilter);
+    let modelMatch = modelfilter === "ModelSeç" || data[i].model.includes(modelfilter);
+    let cityMatch = cityfilter === "ŞəhərSeç" || data[i].city.includes(cityfilter);
+    let currMatch = currencyfilter === "ŞəhərSeç" || data[i].currency.includes(currencyfilter);
+    if (brandMatch && modelMatch && cityMatch && currMatch) {
+      content.innerHTML += `
+      <div class="w-36 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 m-3 md:w-48	">
+           <div class="relative">
+             <i class="fa-regular fa-heart absolute top-2 right-2 text-white cursor-pointer	"></i>
+             <div class="absolute bottom-2 right-2 bg-white p-1 text-sm	rounded">
+               <i class="fa-solid fa-crown text-[#ff9f2b]"></i>
+               <i class="fa-solid fa-gem text-[#ff4f08] "></i>
+             </div>
+             <img src="${data[i].images}" alt="" class="object-cover object-center w-full object-cover	 rounded-t-md h-48 dark:bg-gray-500">
+           </div>
+           <div class="py-2 px-3">
+               <span class="block tracking-widest uppercase text-base font-bold">${data[i].price}${data[i].currency}</span>
+               <h2 class="font-medium tracking-wide">${data[i].brand}${data[i].model}</h2>
+               <p>${data[i].year}, ${data[i].engine},${data[i].odometer}${data[i].odometerUnit}</p>
+               <p class="text-gray-600 text-sm">${data[i].city}</p>
+           </div>
+       </div>
+   `
+    }
+  }
+}
+
+
+function cleanfilter() {
+  markaSection.value = "MarkaSeç";
+  modelSection.value = "ModelSeç";
+  citySection.value = "ŞəhərSeç";
+  banSection.value = "BanNövü";
+  content.innerHTML = "";
+  showad();
+}
+
+
+
+
+
+
+
+
+
+
