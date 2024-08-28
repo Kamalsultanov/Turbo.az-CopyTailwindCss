@@ -452,7 +452,7 @@ const data = [
   },
   {
     id: "26",
-    brand: "Tayota",
+    brand: "Toyota",
     model: "Sienna",
     banType: "Minivan",
     odometer: 22000,
@@ -470,7 +470,7 @@ const data = [
   },
   {
     id: "27",
-    brand: "Tayota",
+    brand: "Toyota",
     model: "Prius",
     banType: "Liftbek",
     odometer: 188293,
@@ -872,14 +872,16 @@ function showad() {
   let modelfilter = modelSection.value;
   let cityfilter = citySection.value;
   let currencyfilter = currency.value
+  let banfilter = banSection.value
   content.innerHTML = ""
 
   for (let i = 0; i < data.length; i++) {
     let brandMatch = markafilter === "MarkaSeç" || data[i].brand.includes(markafilter);
     let modelMatch = modelfilter === "ModelSeç" || data[i].model.includes(modelfilter);
     let cityMatch = cityfilter === "ŞəhərSeç" || data[i].city.includes(cityfilter);
-    let currMatch = currencyfilter === "ŞəhərSeç" || data[i].currency.includes(currencyfilter);
-    if (brandMatch && modelMatch && cityMatch && currMatch) {
+    let banMatch = banfilter === "BanNövü" || data[i].banType.includes(banfilter);
+    let currMatch = currencyfilter === "Valyuta" || data[i].currency.includes(currencyfilter);
+    if (brandMatch && modelMatch && cityMatch && currMatch && banMatch) {
       content.innerHTML += `
       <div class="w-36 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 m-3 md:w-48	">
            <div class="relative">
