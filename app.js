@@ -910,7 +910,10 @@ function cleanfilter() {
   modelSection.value = "ModelSeç";
   citySection.value = "ŞəhərSeç";
   banSection.value = "BanNövü";
+  currency.value = "Valyuta"
+
   content.innerHTML = "";
+  
   showad();
 }
 
